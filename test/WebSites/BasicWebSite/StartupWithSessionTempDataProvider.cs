@@ -6,13 +6,14 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace BasicWebSite
 {
-    public class StartupWithCookieTempDataProvider
+    public class StartupWithSessionTempDataProvider
     {
         public void ConfigureServices(IServiceCollection services)
         {
+            // CookieTempDataProvider is the default ITempDataProvider
             services
                 .AddMvc()
-                .AddCookieTempDataProvider();
+                .AddSessionStateTempDataProvider();
         }
 
         public void Configure(IApplicationBuilder app)
