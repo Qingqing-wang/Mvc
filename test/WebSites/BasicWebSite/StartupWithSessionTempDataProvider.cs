@@ -14,11 +14,13 @@ namespace BasicWebSite
             services
                 .AddMvc()
                 .AddSessionStateTempDataProvider();
+            services.AddSession();
         }
 
         public void Configure(IApplicationBuilder app)
         {
             app.UseCultureReplacer();
+            app.UseSession();
             app.UseMvcWithDefaultRoute();
         }
     }
